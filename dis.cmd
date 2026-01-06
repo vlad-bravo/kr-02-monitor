@@ -1,0 +1,1 @@
+C:\Dev\retroassembler\retroassembler.exe -d -D=$8800 -C=8080 KR02_32O.BIN KR02_32O.lst
