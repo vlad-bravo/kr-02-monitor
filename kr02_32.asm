@@ -22,13 +22,13 @@
    jmp $ff52       ; $8830 c3 52 ff
    jmp $ff56       ; $8833 c3 56 ff
 lf836:
-   mvi a,$8a       ; $8836 3e 8a   
+   mvi a,$8a       ; $8836 3e 8a
    sta $8003       ; $8838 32 03 80
    lxi sp,$76cf    ; $883b 31 cf 76
    call $face      ; $883e cd ce fa
    lxi h,$7600     ; $8841 21 00 76
    lxi d,$765f     ; $8844 11 5f 76
-   mvi c,$00       ; $8847 0e 00   
+   mvi c,$00       ; $8847 0e 00
    call $f9ed      ; $8849 cd ed f9
    lxi h,$76cf     ; $884c 21 cf 76
    shld $761c      ; $884f 22 1c 76
@@ -39,707 +39,707 @@ lf836:
    shld $7631      ; $885e 22 31 76
    lxi h,$1d2a     ; $8861 21 2a 1d
    shld $762f      ; $8864 22 2f 76
-   mvi a,$c3       ; $8867 3e c3   
+   mvi a,$c3       ; $8867 3e c3
    sta $7626       ; $8869 32 26 76
    lxi sp,$76cf    ; $886c 31 cf 76
    lxi h,$ff66     ; $886f 21 66 ff
    call $f922      ; $8872 cd 22 f9
    sta $8002       ; $8875 32 02 80
-   dcr a           ; $8878 3d      
+   dcr a           ; $8878 3d
    sta $a002       ; $8879 32 02 a0
    call $f8ee      ; $887c cd ee f8
    lxi h,$f86c     ; $887f 21 6c f8
-   push h          ; $8882 e5      
+   push h          ; $8882 e5
    lxi h,$7633     ; $8883 21 33 76
-   mov a,m         ; $8886 7e      
-   cpi $58         ; $8887 fe 58   
+   mov a,m         ; $8886 7e
+   cpi $58         ; $8887 fe 58
    jz $ffd3        ; $8889 ca d3 ff
-   cpi $55         ; $888c fe 55   
+   cpi $55         ; $888c fe 55
    jz $f000        ; $888e ca 00 f0
-   push psw        ; $8891 f5      
+   push psw        ; $8891 f5
    call $f92c      ; $8892 cd 2c f9
    lhld $762b      ; $8895 2a 2b 76
-   mov c,l         ; $8898 4d      
-   mov b,h         ; $8899 44      
+   mov c,l         ; $8898 4d
+   mov b,h         ; $8899 44
    lhld $7629      ; $889a 2a 29 76
-   xchg            ; $889d eb      
+   xchg            ; $889d eb
    lhld $7627      ; $889e 2a 27 76
-   pop psw         ; $88a1 f1      
-   cpi $44         ; $88a2 fe 44   
+   pop psw         ; $88a1 f1
+   cpi $44         ; $88a2 fe 44
    jz $f9c5        ; $88a4 ca c5 f9
-   cpi $43         ; $88a7 fe 43   
+   cpi $43         ; $88a7 fe 43
    jz $f9d7        ; $88a9 ca d7 f9
-   cpi $46         ; $88ac fe 46   
+   cpi $46         ; $88ac fe 46
    jz $f9ed        ; $88ae ca ed f9
-   cpi $53         ; $88b1 fe 53   
+   cpi $53         ; $88b1 fe 53
    jz $f9f4        ; $88b3 ca f4 f9
-   cpi $54         ; $88b6 fe 54   
+   cpi $54         ; $88b6 fe 54
    jz $f9ff        ; $88b8 ca ff f9
-   cpi $4d         ; $88bb fe 4d   
+   cpi $4d         ; $88bb fe 4d
    jz $fa26        ; $88bd ca 26 fa
-   cpi $47         ; $88c0 fe 47   
+   cpi $47         ; $88c0 fe 47
    jz $fa3f        ; $88c2 ca 3f fa
-   cpi $49         ; $88c5 fe 49   
+   cpi $49         ; $88c5 fe 49
    jz $fa86        ; $88c7 ca 86 fa
-   cpi $4f         ; $88ca fe 4f   
+   cpi $4f         ; $88ca fe 4f
    jz $fb2d        ; $88cc ca 2d fb
-   cpi $4c         ; $88cf fe 4c   
+   cpi $4c         ; $88cf fe 4c
    jz $fa08        ; $88d1 ca 08 fa
-   cpi $52         ; $88d4 fe 52   
+   cpi $52         ; $88d4 fe 52
    jz $fa68        ; $88d6 ca 68 fa
    jmp $f000       ; $88d9 c3 00 f0
 
-   mvi a,$33       ; $88dc 3e 33   
-   cmp l           ; $88de bd      
+   mvi a,$33       ; $88dc 3e 33
+   cmp l           ; $88de bd
    jz $f8f1        ; $88df ca f1 f8
-   push h          ; $88e2 e5      
+   push h          ; $88e2 e5
    lxi h,$ff9e     ; $88e3 21 9e ff
    call $f922      ; $88e6 cd 22 f9
-   pop h           ; $88e9 e1      
-   dcx h           ; $88ea 2b      
+   pop h           ; $88e9 e1
+   dcx h           ; $88ea 2b
    jmp $f8f3       ; $88eb c3 f3 f8
 
    lxi h,$7633     ; $88ee 21 33 76
-   mvi b,$00       ; $88f1 06 00   
+   mvi b,$00       ; $88f1 06 00
    call $fe63      ; $88f3 cd 63 fe
-   cpi $08         ; $88f6 fe 08   
+   cpi $08         ; $88f6 fe 08
    jz $f8dc        ; $88f8 ca dc f8
-   cpi $7f         ; $88fb fe 7f   
+   cpi $7f         ; $88fb fe 7f
    jz $f8dc        ; $88fd ca dc f8
    cnz $fcb9       ; $8900 c4 b9 fc
-   mov m,a         ; $8903 77      
-   cpi $0d         ; $8904 fe 0d   
+   mov m,a         ; $8903 77
+   cpi $0d         ; $8904 fe 0d
    jz $f91a        ; $8906 ca 1a f9
-   cpi $2e         ; $8909 fe 2e   
+   cpi $2e         ; $8909 fe 2e
    jz $f86c        ; $890b ca 6c f8
-   mvi b,$ff       ; $890e 06 ff   
-   mvi a,$52       ; $8910 3e 52   
-   cmp l           ; $8912 bd      
+   mvi b,$ff       ; $890e 06 ff
+   mvi a,$52       ; $8910 3e 52
+   cmp l           ; $8912 bd
    jz $faae        ; $8913 ca ae fa
-   inx h           ; $8916 23      
+   inx h           ; $8916 23
    jmp $f8f3       ; $8917 c3 f3 f8
 
-   mov a,b         ; $891a 78      
-   ral             ; $891b 17      
+   mov a,b         ; $891a 78
+   ral             ; $891b 17
    lxi d,$7633     ; $891c 11 33 76
-   mvi b,$00       ; $891f 06 00   
-   ret             ; $8921 c9      
+   mvi b,$00       ; $891f 06 00
+   ret             ; $8921 c9
 
-   mov a,m         ; $8922 7e      
-   ana a           ; $8923 a7      
-   rz              ; $8924 c8      
+   mov a,m         ; $8922 7e
+   ana a           ; $8923 a7
+   rz              ; $8924 c8
    call $fcb9      ; $8925 cd b9 fc
-   inx h           ; $8928 23      
+   inx h           ; $8928 23
    jmp $f922       ; $8929 c3 22 f9
 
    lxi h,$7627     ; $892c 21 27 76
    lxi d,$762d     ; $892f 11 2d 76
-   mvi c,$00       ; $8932 0e 00   
+   mvi c,$00       ; $8932 0e 00
    call $f9ed      ; $8934 cd ed f9
    lxi d,$7634     ; $8937 11 34 76
    call $f95a      ; $893a cd 5a f9
    shld $7627      ; $893d 22 27 76
    shld $7629      ; $8940 22 29 76
-   rc              ; $8943 d8      
-   mvi a,$ff       ; $8944 3e ff   
+   rc              ; $8943 d8
+   mvi a,$ff       ; $8944 3e ff
    sta $762d       ; $8946 32 2d 76
    call $f95a      ; $8949 cd 5a f9
    shld $7629      ; $894c 22 29 76
-   rc              ; $894f d8      
+   rc              ; $894f d8
    call $f95a      ; $8950 cd 5a f9
    shld $762b      ; $8953 22 2b 76
-   rc              ; $8956 d8      
+   rc              ; $8956 d8
    jmp $faae       ; $8957 c3 ae fa
 
    lxi h,$0000     ; $895a 21 00 00
-   ldax d          ; $895d 1a      
-   inx d           ; $895e 13      
-   cpi $0d         ; $895f fe 0d   
+   ldax d          ; $895d 1a
+   inx d           ; $895e 13
+   cpi $0d         ; $895f fe 0d
    jz $f98e        ; $8961 ca 8e f9
-   cpi $2c         ; $8964 fe 2c   
-   rz              ; $8966 c8      
-   cpi $20         ; $8967 fe 20   
+   cpi $2c         ; $8964 fe 2c
+   rz              ; $8966 c8
+   cpi $20         ; $8967 fe 20
    jz $f95d        ; $8969 ca 5d f9
-   sui $30         ; $896c d6 30   
+   sui $30         ; $896c d6 30
    jm $faae        ; $896e fa ae fa
-   cpi $0a         ; $8971 fe 0a   
+   cpi $0a         ; $8971 fe 0a
    jm $f982        ; $8973 fa 82 f9
-   cpi $11         ; $8976 fe 11   
+   cpi $11         ; $8976 fe 11
    jm $faae        ; $8978 fa ae fa
-   cpi $17         ; $897b fe 17   
+   cpi $17         ; $897b fe 17
    jp $faae        ; $897d f2 ae fa
-   sui $07         ; $8980 d6 07   
-   mov c,a         ; $8982 4f      
-   dad h           ; $8983 29      
-   dad h           ; $8984 29      
-   dad h           ; $8985 29      
-   dad h           ; $8986 29      
+   sui $07         ; $8980 d6 07
+   mov c,a         ; $8982 4f
+   dad h           ; $8983 29
+   dad h           ; $8984 29
+   dad h           ; $8985 29
+   dad h           ; $8986 29
    jc $faae        ; $8987 da ae fa
-   dad b           ; $898a 09      
+   dad b           ; $898a 09
    jmp $f95d       ; $898b c3 5d f9
 
-   stc             ; $898e 37      
-   ret             ; $898f c9      
+   stc             ; $898e 37
+   ret             ; $898f c9
 
-   mov a,h         ; $8990 7c      
-   cmp d           ; $8991 ba      
-   rnz             ; $8992 c0      
-   mov a,l         ; $8993 7d      
-   cmp e           ; $8994 bb      
-   ret             ; $8995 c9      
+   mov a,h         ; $8990 7c
+   cmp d           ; $8991 ba
+   rnz             ; $8992 c0
+   mov a,l         ; $8993 7d
+   cmp e           ; $8994 bb
+   ret             ; $8995 c9
 
    call $f9a4      ; $8996 cd a4 f9
    call $f990      ; $8999 cd 90 f9
    jnz $f9a2       ; $899c c2 a2 f9
-   inx sp          ; $899f 33      
-   inx sp          ; $89a0 33      
-   ret             ; $89a1 c9      
+   inx sp          ; $899f 33
+   inx sp          ; $89a0 33
+   ret             ; $89a1 c9
 
-   inx h           ; $89a2 23      
-   ret             ; $89a3 c9      
+   inx h           ; $89a2 23
+   ret             ; $89a3 c9
 
    call $fe72      ; $89a4 cd 72 fe
-   cpi $03         ; $89a7 fe 03   
-   rnz             ; $89a9 c0      
+   cpi $03         ; $89a7 fe 03
+   rnz             ; $89a9 c0
    call $face      ; $89aa cd ce fa
    jmp $faae       ; $89ad c3 ae fa
 
-   push h          ; $89b0 e5      
+   push h          ; $89b0 e5
    lxi h,$ff6c     ; $89b1 21 6c ff
    call $f922      ; $89b4 cd 22 f9
-   pop h           ; $89b7 e1      
-   ret             ; $89b8 c9      
+   pop h           ; $89b7 e1
+   ret             ; $89b8 c9
 
-   mov a,m         ; $89b9 7e      
-   push b          ; $89ba c5      
+   mov a,m         ; $89b9 7e
+   push b          ; $89ba c5
    call $fca5      ; $89bb cd a5 fc
-   mvi a,$20       ; $89be 3e 20   
+   mvi a,$20       ; $89be 3e 20
    call $fcb9      ; $89c0 cd b9 fc
-   pop b           ; $89c3 c1      
-   ret             ; $89c4 c9      
+   pop b           ; $89c3 c1
+   ret             ; $89c4 c9
 
    call $fb78      ; $89c5 cd 78 fb
    call $f9b9      ; $89c8 cd b9 f9
    call $f996      ; $89cb cd 96 f9
-   mov a,l         ; $89ce 7d      
-   ani $0f         ; $89cf e6 0f   
+   mov a,l         ; $89ce 7d
+   ani $0f         ; $89cf e6 0f
    jz $f9c5        ; $89d1 ca c5 f9
    jmp $f9c8       ; $89d4 c3 c8 f9
 
-   ldax b          ; $89d7 0a      
-   cmp m           ; $89d8 be      
+   ldax b          ; $89d7 0a
+   cmp m           ; $89d8 be
    jz $f9e6        ; $89d9 ca e6 f9
    call $fb78      ; $89dc cd 78 fb
    call $f9b9      ; $89df cd b9 f9
-   ldax b          ; $89e2 0a      
+   ldax b          ; $89e2 0a
    call $f9ba      ; $89e3 cd ba f9
-   inx b           ; $89e6 03      
+   inx b           ; $89e6 03
    call $f996      ; $89e7 cd 96 f9
    jmp $f9d7       ; $89ea c3 d7 f9
 
-   mov m,c         ; $89ed 71      
+   mov m,c         ; $89ed 71
    call $f999      ; $89ee cd 99 f9
    jmp $f9ed       ; $89f1 c3 ed f9
 
-   mov a,c         ; $89f4 79      
-   cmp m           ; $89f5 be      
+   mov a,c         ; $89f4 79
+   cmp m           ; $89f5 be
    cz $fb78        ; $89f6 cc 78 fb
    call $f996      ; $89f9 cd 96 f9
    jmp $f9f4       ; $89fc c3 f4 f9
 
-   mov a,m         ; $89ff 7e      
-   stax b          ; $8a00 02      
-   inx b           ; $8a01 03      
+   mov a,m         ; $89ff 7e
+   stax b          ; $8a00 02
+   inx b           ; $8a01 03
    call $f999      ; $8a02 cd 99 f9
    jmp $f9ff       ; $8a05 c3 ff f9
    call $fb78      ; $8a08 cd 78 fb
-   mov a,m         ; $8a0b 7e      
-   ora a           ; $8a0c b7      
+   mov a,m         ; $8a0b 7e
+   ora a           ; $8a0c b7
    jm $fa15        ; $8a0d fa 15 fa
-   cpi $20         ; $8a10 fe 20   
+   cpi $20         ; $8a10 fe 20
    jnc $fa17       ; $8a12 d2 17 fa
-   mvi a,$2e       ; $8a15 3e 2e   
+   mvi a,$2e       ; $8a15 3e 2e
    call $fcb9      ; $8a17 cd b9 fc
    call $f996      ; $8a1a cd 96 f9
-   mov a,l         ; $8a1d 7d      
-   ani $0f         ; $8a1e e6 0f   
+   mov a,l         ; $8a1d 7d
+   ani $0f         ; $8a1e e6 0f
    jz $fa08        ; $8a20 ca 08 fa
    jmp $fa0b       ; $8a23 c3 0b fa
 
    call $fb78      ; $8a26 cd 78 fb
    call $f9b9      ; $8a29 cd b9 f9
-   push h          ; $8a2c e5      
+   push h          ; $8a2c e5
    call $f8ee      ; $8a2d cd ee f8
-   pop h           ; $8a30 e1      
+   pop h           ; $8a30 e1
    jnc $fa3b       ; $8a31 d2 3b fa
-   push h          ; $8a34 e5      
+   push h          ; $8a34 e5
    call $f95a      ; $8a35 cd 5a f9
-   mov a,l         ; $8a38 7d      
-   pop h           ; $8a39 e1      
-   mov m,a         ; $8a3a 77      
-   inx h           ; $8a3b 23      
+   mov a,l         ; $8a38 7d
+   pop h           ; $8a39 e1
+   mov m,a         ; $8a3a 77
+   inx h           ; $8a3b 23
    jmp $fa26       ; $8a3c c3 26 fa
    call $f990      ; $8a3f cd 90 f9
    jz $fa5a        ; $8a42 ca 5a fa
-   xchg            ; $8a45 eb      
+   xchg            ; $8a45 eb
    shld $7623      ; $8a46 22 23 76
-   mov a,m         ; $8a49 7e      
+   mov a,m         ; $8a49 7e
    sta $7625       ; $8a4a 32 25 76
-   mvi m,$f7       ; $8a4d 36 f7   
-   mvi a,$c3       ; $8a4f 3e c3   
+   mvi m,$f7       ; $8a4d 36 f7
+   mvi a,$c3       ; $8a4f 3e c3
    sta $0030       ; $8a51 32 30 00
    lxi h,$ffa2     ; $8a54 21 a2 ff
    shld $0031      ; $8a57 22 31 00
    lxi sp,$7618    ; $8a5a 31 18 76
-   pop b           ; $8a5d c1      
-   pop d           ; $8a5e d1      
-   pop h           ; $8a5f e1      
-   pop psw         ; $8a60 f1      
-   sphl            ; $8a61 f9      
+   pop b           ; $8a5d c1
+   pop d           ; $8a5e d1
+   pop h           ; $8a5f e1
+   pop psw         ; $8a60 f1
+   sphl            ; $8a61 f9
    lhld $7616      ; $8a62 2a 16 76
    jmp $7626       ; $8a65 c3 26 76
 
-   mvi a,$90       ; $8a68 3e 90   
+   mvi a,$90       ; $8a68 3e 90
    sta $a003       ; $8a6a 32 03 a0
    shld $a001      ; $8a6d 22 01 a0
    lda $a000       ; $8a70 3a 00 a0
-   stax b          ; $8a73 02      
-   inx b           ; $8a74 03      
+   stax b          ; $8a73 02
+   inx b           ; $8a74 03
    call $f999      ; $8a75 cd 99 f9
    jmp $fa6d       ; $8a78 c3 6d fa
 
    lhld $7602      ; $8a7b 2a 02 76
-   ret             ; $8a7e c9      
+   ret             ; $8a7e c9
 
-   push h          ; $8a7f e5      
+   push h          ; $8a7f e5
    lhld $7600      ; $8a80 2a 00 76
-   mov a,m         ; $8a83 7e      
-   pop h           ; $8a84 e1      
-   ret             ; $8a85 c9      
+   mov a,m         ; $8a83 7e
+   pop h           ; $8a84 e1
+   ret             ; $8a85 c9
 
    lda $762d       ; $8a86 3a 2d 76
-   ora a           ; $8a89 b7      
+   ora a           ; $8a89 b7
    jz $fa91        ; $8a8a ca 91 fa
-   mov a,e         ; $8a8d 7b      
+   mov a,e         ; $8a8d 7b
    sta $762f       ; $8a8e 32 2f 76
    call $fab6      ; $8a91 cd b6 fa
    call $fb78      ; $8a94 cd 78 fb
-   xchg            ; $8a97 eb      
+   xchg            ; $8a97 eb
    call $fb78      ; $8a98 cd 78 fb
-   xchg            ; $8a9b eb      
-   push b          ; $8a9c c5      
+   xchg            ; $8a9b eb
+   push b          ; $8a9c c5
    call $fb16      ; $8a9d cd 16 fb
-   mov h,b         ; $8aa0 60      
-   mov l,c         ; $8aa1 69      
+   mov h,b         ; $8aa0 60
+   mov l,c         ; $8aa1 69
    call $fb78      ; $8aa2 cd 78 fb
-   pop d           ; $8aa5 d1      
+   pop d           ; $8aa5 d1
    call $f990      ; $8aa6 cd 90 f9
-   rz              ; $8aa9 c8      
-   xchg            ; $8aaa eb      
+   rz              ; $8aa9 c8
+   xchg            ; $8aaa eb
    call $fb78      ; $8aab cd 78 fb
-   mvi a,$3f       ; $8aae 3e 3f   
+   mvi a,$3f       ; $8aae 3e 3f
    call $fcb9      ; $8ab0 cd b9 fc
    jmp $f86c       ; $8ab3 c3 6c f8
 
-   mvi a,$ff       ; $8ab6 3e ff   
+   mvi a,$ff       ; $8ab6 3e ff
    call $faff      ; $8ab8 cd ff fa
-   push h          ; $8abb e5      
-   dad b           ; $8abc 09      
-   xchg            ; $8abd eb      
+   push h          ; $8abb e5
+   dad b           ; $8abc 09
+   xchg            ; $8abd eb
    call $fafd      ; $8abe cd fd fa
-   pop h           ; $8ac1 e1      
-   dad b           ; $8ac2 09      
-   xchg            ; $8ac3 eb      
-   push h          ; $8ac4 e5      
+   pop h           ; $8ac1 e1
+   dad b           ; $8ac2 09
+   xchg            ; $8ac3 eb
+   push h          ; $8ac4 e5
    call $fb0a      ; $8ac5 cd 0a fb
-   mvi a,$ff       ; $8ac8 3e ff   
+   mvi a,$ff       ; $8ac8 3e ff
    call $faff      ; $8aca cd ff fa
-   pop h           ; $8acd e1      
-   push h          ; $8ace e5      
+   pop h           ; $8acd e1
+   push h          ; $8ace e5
    lxi h,$c001     ; $8acf 21 01 c0
-   mvi m,$00       ; $8ad2 36 00   
-   dcx h           ; $8ad4 2b      
-   mvi m,$4d       ; $8ad5 36 4d   
-   mvi m,$1d       ; $8ad7 36 1d   
-   mvi m,$99       ; $8ad9 36 99   
-   mvi m,$93       ; $8adb 36 93   
-   inx h           ; $8add 23      
-   mvi m,$27       ; $8ade 36 27   
-   mov a,m         ; $8ae0 7e      
-   mov a,m         ; $8ae1 7e      
-   ani $20         ; $8ae2 e6 20   
+   mvi m,$00       ; $8ad2 36 00
+   dcx h           ; $8ad4 2b
+   mvi m,$4d       ; $8ad5 36 4d
+   mvi m,$1d       ; $8ad7 36 1d
+   mvi m,$99       ; $8ad9 36 99
+   mvi m,$93       ; $8adb 36 93
+   inx h           ; $8add 23
+   mvi m,$27       ; $8ade 36 27
+   mov a,m         ; $8ae0 7e
+   mov a,m         ; $8ae1 7e
+   ani $20         ; $8ae2 e6 20
    jz $fae1        ; $8ae4 ca e1 fa
    lxi h,$e008     ; $8ae7 21 08 e0
-   mvi m,$80       ; $8aea 36 80   
-   mvi l,$04       ; $8aec 2e 04   
-   mvi m,$d0       ; $8aee 36 d0   
-   mvi m,$76       ; $8af0 36 76   
-   inr l           ; $8af2 2c      
-   mvi m,$23       ; $8af3 36 23   
-   mvi m,$49       ; $8af5 36 49   
-   mvi l,$08       ; $8af7 2e 08   
-   mvi m,$a4       ; $8af9 36 a4   
-   pop h           ; $8afb e1      
-   ret             ; $8afc c9      
+   mvi m,$80       ; $8aea 36 80
+   mvi l,$04       ; $8aec 2e 04
+   mvi m,$d0       ; $8aee 36 d0
+   mvi m,$76       ; $8af0 36 76
+   inr l           ; $8af2 2c
+   mvi m,$23       ; $8af3 36 23
+   mvi m,$49       ; $8af5 36 49
+   mvi l,$08       ; $8af7 2e 08
+   mvi m,$a4       ; $8af9 36 a4
+   pop h           ; $8afb e1
+   ret             ; $8afc c9
 
-   mvi a,$08       ; $8afd 3e 08   
+   mvi a,$08       ; $8afd 3e 08
    call $fb98      ; $8aff cd 98 fb
-   mov b,a         ; $8b02 47      
-   mvi a,$08       ; $8b03 3e 08   
+   mov b,a         ; $8b02 47
+   mvi a,$08       ; $8b03 3e 08
    call $fb98      ; $8b05 cd 98 fb
-   mov c,a         ; $8b08 4f      
-   ret             ; $8b09 c9      
+   mov c,a         ; $8b08 4f
+   ret             ; $8b09 c9
 
-   mvi a,$08       ; $8b0a 3e 08   
+   mvi a,$08       ; $8b0a 3e 08
    call $fb98      ; $8b0c cd 98 fb
-   mov m,a         ; $8b0f 77      
+   mov m,a         ; $8b0f 77
    call $f999      ; $8b10 cd 99 f9
    jmp $fb0a       ; $8b13 c3 0a fb
 
    lxi b,$0000     ; $8b16 01 00 00
-   mov a,m         ; $8b19 7e      
-   add c           ; $8b1a 81      
-   mov c,a         ; $8b1b 4f      
-   push psw        ; $8b1c f5      
+   mov a,m         ; $8b19 7e
+   add c           ; $8b1a 81
+   mov c,a         ; $8b1b 4f
+   push psw        ; $8b1c f5
    call $f990      ; $8b1d cd 90 f9
    jz $f99f        ; $8b20 ca 9f f9
-   pop psw         ; $8b23 f1      
-   mov a,b         ; $8b24 78      
-   adc m           ; $8b25 8e      
-   mov b,a         ; $8b26 47      
+   pop psw         ; $8b23 f1
+   mov a,b         ; $8b24 78
+   adc m           ; $8b25 8e
+   mov b,a         ; $8b26 47
    call $f999      ; $8b27 cd 99 f9
    jmp $fb19       ; $8b2a c3 19 fb
 
-   mov a,c         ; $8b2d 79      
-   ora a           ; $8b2e b7      
+   mov a,c         ; $8b2d 79
+   ora a           ; $8b2e b7
    jz $fb35        ; $8b2f ca 35 fb
    sta $7630       ; $8b32 32 30 76
-   push h          ; $8b35 e5      
+   push h          ; $8b35 e5
    call $fb16      ; $8b36 cd 16 fb
-   pop h           ; $8b39 e1      
+   pop h           ; $8b39 e1
    call $fb78      ; $8b3a cd 78 fb
-   xchg            ; $8b3d eb      
+   xchg            ; $8b3d eb
    call $fb78      ; $8b3e cd 78 fb
-   xchg            ; $8b41 eb      
-   push h          ; $8b42 e5      
-   mov h,b         ; $8b43 60      
-   mov l,c         ; $8b44 69      
+   xchg            ; $8b41 eb
+   push h          ; $8b42 e5
+   mov h,b         ; $8b43 60
+   mov l,c         ; $8b44 69
    call $fb78      ; $8b45 cd 78 fb
-   pop h           ; $8b48 e1      
-   push b          ; $8b49 c5      
+   pop h           ; $8b48 e1
+   push b          ; $8b49 c5
    lxi b,$0000     ; $8b4a 01 00 00
    call $fc46      ; $8b4d cd 46 fc
-   dcr b           ; $8b50 05      
-   xthl            ; $8b51 e3      
-   xthl            ; $8b52 e3      
+   dcr b           ; $8b50 05
+   xthl            ; $8b51 e3
+   xthl            ; $8b52 e3
    jnz $fb4d       ; $8b53 c2 4d fb
-   mvi c,$e6       ; $8b56 0e e6   
+   mvi c,$e6       ; $8b56 0e e6
    call $fc46      ; $8b58 cd 46 fc
    call $fb90      ; $8b5b cd 90 fb
-   xchg            ; $8b5e eb      
+   xchg            ; $8b5e eb
    call $fb90      ; $8b5f cd 90 fb
-   xchg            ; $8b62 eb      
+   xchg            ; $8b62 eb
    call $fb86      ; $8b63 cd 86 fb
    lxi h,$0000     ; $8b66 21 00 00
    call $fb90      ; $8b69 cd 90 fb
-   mvi c,$e6       ; $8b6c 0e e6   
+   mvi c,$e6       ; $8b6c 0e e6
    call $fc46      ; $8b6e cd 46 fc
-   pop h           ; $8b71 e1      
+   pop h           ; $8b71 e1
    call $fb90      ; $8b72 cd 90 fb
    jmp $face       ; $8b75 c3 ce fa
 
-   push b          ; $8b78 c5      
+   push b          ; $8b78 c5
    call $f9b0      ; $8b79 cd b0 f9
-   mov a,h         ; $8b7c 7c      
+   mov a,h         ; $8b7c 7c
    call $fca5      ; $8b7d cd a5 fc
-   mov a,l         ; $8b80 7d      
+   mov a,l         ; $8b80 7d
    call $f9ba      ; $8b81 cd ba f9
-   pop b           ; $8b84 c1      
-   ret             ; $8b85 c9      
+   pop b           ; $8b84 c1
+   ret             ; $8b85 c9
 
-   mov c,m         ; $8b86 4e      
+   mov c,m         ; $8b86 4e
    call $fc46      ; $8b87 cd 46 fc
    call $f999      ; $8b8a cd 99 f9
    jmp $fb86       ; $8b8d c3 86 fb
 
-   mov c,h         ; $8b90 4c      
+   mov c,h         ; $8b90 4c
    call $fc46      ; $8b91 cd 46 fc
-   mov c,l         ; $8b94 4d      
+   mov c,l         ; $8b94 4d
    jmp $fc46       ; $8b95 c3 46 fc
 
-   push h          ; $8b98 e5      
-   push b          ; $8b99 c5      
-   push d          ; $8b9a d5      
-   mov d,a         ; $8b9b 57      
-   mvi a,$80       ; $8b9c 3e 80   
+   push h          ; $8b98 e5
+   push b          ; $8b99 c5
+   push d          ; $8b9a d5
+   mov d,a         ; $8b9b 57
+   mvi a,$80       ; $8b9c 3e 80
    sta $e008       ; $8b9e 32 08 e0
    lxi h,$0000     ; $8ba1 21 00 00
-   dad sp          ; $8ba4 39      
+   dad sp          ; $8ba4 39
    lxi sp,$0000    ; $8ba5 31 00 00
    shld $760d      ; $8ba8 22 0d 76
-   mvi c,$00       ; $8bab 0e 00   
+   mvi c,$00       ; $8bab 0e 00
    lda $8002       ; $8bad 3a 02 80
-   rrc             ; $8bb0 0f      
-   rrc             ; $8bb1 0f      
-   rrc             ; $8bb2 0f      
-   rrc             ; $8bb3 0f      
-   ani $01         ; $8bb4 e6 01   
-   mov e,a         ; $8bb6 5f      
-   pop psw         ; $8bb7 f1      
-   mov a,c         ; $8bb8 79      
-   ani $7f         ; $8bb9 e6 7f   
-   rlc             ; $8bbb 07      
-   mov c,a         ; $8bbc 4f      
-   mvi h,$00       ; $8bbd 26 00   
-   dcr h           ; $8bbf 25      
+   rrc             ; $8bb0 0f
+   rrc             ; $8bb1 0f
+   rrc             ; $8bb2 0f
+   rrc             ; $8bb3 0f
+   ani $01         ; $8bb4 e6 01
+   mov e,a         ; $8bb6 5f
+   pop psw         ; $8bb7 f1
+   mov a,c         ; $8bb8 79
+   ani $7f         ; $8bb9 e6 7f
+   rlc             ; $8bbb 07
+   mov c,a         ; $8bbc 4f
+   mvi h,$00       ; $8bbd 26 00
+   dcr h           ; $8bbf 25
    jz $fc34        ; $8bc0 ca 34 fc
-   pop psw         ; $8bc3 f1      
+   pop psw         ; $8bc3 f1
    lda $8002       ; $8bc4 3a 02 80
-   rrc             ; $8bc7 0f      
-   rrc             ; $8bc8 0f      
-   rrc             ; $8bc9 0f      
-   rrc             ; $8bca 0f      
-   ani $01         ; $8bcb e6 01   
-   cmp e           ; $8bcd bb      
+   rrc             ; $8bc7 0f
+   rrc             ; $8bc8 0f
+   rrc             ; $8bc9 0f
+   rrc             ; $8bca 0f
+   ani $01         ; $8bcb e6 01
+   cmp e           ; $8bcd bb
    jz $fbbf        ; $8bce ca bf fb
-   ora c           ; $8bd1 b1      
-   mov c,a         ; $8bd2 4f      
-   dcr d           ; $8bd3 15      
+   ora c           ; $8bd1 b1
+   mov c,a         ; $8bd2 4f
+   dcr d           ; $8bd3 15
    lda $762f       ; $8bd4 3a 2f 76
    jnz $fbdc       ; $8bd7 c2 dc fb
-   sui $12         ; $8bda d6 12   
-   mov b,a         ; $8bdc 47      
-   pop psw         ; $8bdd f1      
-   dcr b           ; $8bde 05      
+   sui $12         ; $8bda d6 12
+   mov b,a         ; $8bdc 47
+   pop psw         ; $8bdd f1
+   dcr b           ; $8bde 05
    jnz $fbdd       ; $8bdf c2 dd fb
-   inr d           ; $8be2 14      
+   inr d           ; $8be2 14
    lda $8002       ; $8be3 3a 02 80
-   rrc             ; $8be6 0f      
-   rrc             ; $8be7 0f      
-   rrc             ; $8be8 0f      
-   rrc             ; $8be9 0f      
-   ani $01         ; $8bea e6 01   
-   mov e,a         ; $8bec 5f      
-   mov a,d         ; $8bed 7a      
-   ora a           ; $8bee b7      
+   rrc             ; $8be6 0f
+   rrc             ; $8be7 0f
+   rrc             ; $8be8 0f
+   rrc             ; $8be9 0f
+   ani $01         ; $8bea e6 01
+   mov e,a         ; $8bec 5f
+   mov a,d         ; $8bed 7a
+   ora a           ; $8bee b7
    jp $fc0b        ; $8bef f2 0b fc
-   mov a,c         ; $8bf2 79      
-   cpi $e6         ; $8bf3 fe e6   
+   mov a,c         ; $8bf2 79
+   cpi $e6         ; $8bf3 fe e6
    jnz $fbff       ; $8bf5 c2 ff fb
-   xra a           ; $8bf8 af      
+   xra a           ; $8bf8 af
    sta $762e       ; $8bf9 32 2e 76
    jmp $fc09       ; $8bfc c3 09 fc
 
-   cpi $19         ; $8bff fe 19   
+   cpi $19         ; $8bff fe 19
    jnz $fbb7       ; $8c01 c2 b7 fb
-   mvi a,$ff       ; $8c04 3e ff   
+   mvi a,$ff       ; $8c04 3e ff
    sta $762e       ; $8c06 32 2e 76
-   mvi d,$09       ; $8c09 16 09   
-   dcr d           ; $8c0b 15      
+   mvi d,$09       ; $8c09 16 09
+   dcr d           ; $8c0b 15
    jnz $fbb7       ; $8c0c c2 b7 fb
    lxi h,$e004     ; $8c0f 21 04 e0
-   mvi m,$d0       ; $8c12 36 d0   
-   mvi m,$76       ; $8c14 36 76   
-   inx h           ; $8c16 23      
-   mvi m,$23       ; $8c17 36 23   
-   mvi m,$49       ; $8c19 36 49   
-   mvi a,$27       ; $8c1b 3e 27   
+   mvi m,$d0       ; $8c12 36 d0
+   mvi m,$76       ; $8c14 36 76
+   inx h           ; $8c16 23
+   mvi m,$23       ; $8c17 36 23
+   mvi m,$49       ; $8c19 36 49
+   mvi a,$27       ; $8c1b 3e 27
    sta $c001       ; $8c1d 32 01 c0
-   mvi a,$e0       ; $8c20 3e e0   
+   mvi a,$e0       ; $8c20 3e e0
    sta $c001       ; $8c22 32 01 c0
-   mvi l,$08       ; $8c25 2e 08   
-   mvi m,$a4       ; $8c27 36 a4   
+   mvi l,$08       ; $8c25 2e 08
+   mvi m,$a4       ; $8c27 36 a4
    lhld $760d      ; $8c29 2a 0d 76
-   sphl            ; $8c2c f9      
+   sphl            ; $8c2c f9
    lda $762e       ; $8c2d 3a 2e 76
-   xra c           ; $8c30 a9      
+   xra c           ; $8c30 a9
    jmp $fca1       ; $8c31 c3 a1 fc
 
    lhld $760d      ; $8c34 2a 0d 76
-   sphl            ; $8c37 f9      
+   sphl            ; $8c37 f9
    call $face      ; $8c38 cd ce fa
-   mov a,d         ; $8c3b 7a      
-   ora a           ; $8c3c b7      
+   mov a,d         ; $8c3b 7a
+   ora a           ; $8c3c b7
    jp $faae        ; $8c3d f2 ae fa
    call $f9a4      ; $8c40 cd a4 f9
    jmp $fb9c       ; $8c43 c3 9c fb
 
-   push h          ; $8c46 e5      
-   push b          ; $8c47 c5      
-   push d          ; $8c48 d5      
-   push psw        ; $8c49 f5      
-   mvi a,$80       ; $8c4a 3e 80   
+   push h          ; $8c46 e5
+   push b          ; $8c47 c5
+   push d          ; $8c48 d5
+   push psw        ; $8c49 f5
+   mvi a,$80       ; $8c4a 3e 80
    sta $e008       ; $8c4c 32 08 e0
    lxi h,$0000     ; $8c4f 21 00 00
-   dad sp          ; $8c52 39      
+   dad sp          ; $8c52 39
    lxi sp,$0000    ; $8c53 31 00 00
-   mvi d,$08       ; $8c56 16 08   
-   pop psw         ; $8c58 f1      
-   mov a,c         ; $8c59 79      
-   rlc             ; $8c5a 07      
-   mov c,a         ; $8c5b 4f      
-   mvi a,$01       ; $8c5c 3e 01   
-   xra c           ; $8c5e a9      
+   mvi d,$08       ; $8c56 16 08
+   pop psw         ; $8c58 f1
+   mov a,c         ; $8c59 79
+   rlc             ; $8c5a 07
+   mov c,a         ; $8c5b 4f
+   mvi a,$01       ; $8c5c 3e 01
+   xra c           ; $8c5e a9
    sta $8002       ; $8c5f 32 02 80
    lda $7630       ; $8c62 3a 30 76
-   mov b,a         ; $8c65 47      
-   pop psw         ; $8c66 f1      
-   dcr b           ; $8c67 05      
+   mov b,a         ; $8c65 47
+   pop psw         ; $8c66 f1
+   dcr b           ; $8c67 05
    jnz $fc66       ; $8c68 c2 66 fc
-   mvi a,$00       ; $8c6b 3e 00   
-   xra c           ; $8c6d a9      
+   mvi a,$00       ; $8c6b 3e 00
+   xra c           ; $8c6d a9
    sta $8002       ; $8c6e 32 02 80
-   dcr d           ; $8c71 15      
+   dcr d           ; $8c71 15
    lda $7630       ; $8c72 3a 30 76
    jnz $fc7a       ; $8c75 c2 7a fc
-   sui $0e         ; $8c78 d6 0e   
-   mov b,a         ; $8c7a 47      
-   pop psw         ; $8c7b f1      
-   dcr b           ; $8c7c 05      
+   sui $0e         ; $8c78 d6 0e
+   mov b,a         ; $8c7a 47
+   pop psw         ; $8c7b f1
+   dcr b           ; $8c7c 05
    jnz $fc7b       ; $8c7d c2 7b fc
-   inr d           ; $8c80 14      
-   dcr d           ; $8c81 15      
+   inr d           ; $8c80 14
+   dcr d           ; $8c81 15
    jnz $fc58       ; $8c82 c2 58 fc
-   sphl            ; $8c85 f9      
+   sphl            ; $8c85 f9
    lxi h,$e004     ; $8c86 21 04 e0
-   mvi m,$d0       ; $8c89 36 d0   
-   mvi m,$76       ; $8c8b 36 76   
-   inx h           ; $8c8d 23      
-   mvi m,$23       ; $8c8e 36 23   
-   mvi m,$49       ; $8c90 36 49   
-   mvi a,$27       ; $8c92 3e 27   
+   mvi m,$d0       ; $8c89 36 d0
+   mvi m,$76       ; $8c8b 36 76
+   inx h           ; $8c8d 23
+   mvi m,$23       ; $8c8e 36 23
+   mvi m,$49       ; $8c90 36 49
+   mvi a,$27       ; $8c92 3e 27
    sta $c001       ; $8c94 32 01 c0
-   mvi a,$e0       ; $8c97 3e e0   
+   mvi a,$e0       ; $8c97 3e e0
    sta $c001       ; $8c99 32 01 c0
-   mvi l,$08       ; $8c9c 2e 08   
-   mvi m,$a4       ; $8c9e 36 a4   
-   pop psw         ; $8ca0 f1      
-   pop d           ; $8ca1 d1      
-   pop b           ; $8ca2 c1      
-   pop h           ; $8ca3 e1      
-   ret             ; $8ca4 c9      
+   mvi l,$08       ; $8c9c 2e 08
+   mvi m,$a4       ; $8c9e 36 a4
+   pop psw         ; $8ca0 f1
+   pop d           ; $8ca1 d1
+   pop b           ; $8ca2 c1
+   pop h           ; $8ca3 e1
+   ret             ; $8ca4 c9
 
-   push psw        ; $8ca5 f5      
-   rrc             ; $8ca6 0f      
-   rrc             ; $8ca7 0f      
-   rrc             ; $8ca8 0f      
-   rrc             ; $8ca9 0f      
+   push psw        ; $8ca5 f5
+   rrc             ; $8ca6 0f
+   rrc             ; $8ca7 0f
+   rrc             ; $8ca8 0f
+   rrc             ; $8ca9 0f
    call $fcae      ; $8caa cd ae fc
-   pop psw         ; $8cad f1      
-   ani $0f         ; $8cae e6 0f   
-   cpi $0a         ; $8cb0 fe 0a   
+   pop psw         ; $8cad f1
+   ani $0f         ; $8cae e6 0f
+   cpi $0a         ; $8cb0 fe 0a
    jm $fcb7        ; $8cb2 fa b7 fc
-   adi $07         ; $8cb5 c6 07   
-   adi $30         ; $8cb7 c6 30   
-   mov c,a         ; $8cb9 4f      
-   push psw        ; $8cba f5      
-   push b          ; $8cbb c5      
-   push d          ; $8cbc d5      
-   push h          ; $8cbd e5      
+   adi $07         ; $8cb5 c6 07
+   adi $30         ; $8cb7 c6 30
+   mov c,a         ; $8cb9 4f
+   push psw        ; $8cba f5
+   push b          ; $8cbb c5
+   push d          ; $8cbc d5
+   push h          ; $8cbd e5
    call $fe01      ; $8cbe cd 01 fe
    lxi h,$fd85     ; $8cc1 21 85 fd
-   push h          ; $8cc4 e5      
+   push h          ; $8cc4 e5
    lhld $7602      ; $8cc5 2a 02 76
-   xchg            ; $8cc8 eb      
+   xchg            ; $8cc8 eb
    lhld $7600      ; $8cc9 2a 00 76
    lda $7604       ; $8ccc 3a 04 76
-   dcr a           ; $8ccf 3d      
+   dcr a           ; $8ccf 3d
    jm $fcee        ; $8cd0 fa ee fc
    jz $fd65        ; $8cd3 ca 65 fd
    jpo $fd73       ; $8cd6 e2 73 fd
-   mov a,c         ; $8cd9 79      
-   sui $20         ; $8cda d6 20   
-   mov c,a         ; $8cdc 4f      
-   dcr c           ; $8cdd 0d      
+   mov a,c         ; $8cd9 79
+   sui $20         ; $8cda d6 20
+   mov c,a         ; $8cdc 4f
+   dcr c           ; $8cdd 0d
    jm $fce9        ; $8cde fa e9 fc
-   push b          ; $8ce1 c5      
+   push b          ; $8ce1 c5
    call $fdb9      ; $8ce2 cd b9 fd
-   pop b           ; $8ce5 c1      
+   pop b           ; $8ce5 c1
    jmp $fcdd       ; $8ce6 c3 dd fc
 
-   xra a           ; $8ce9 af      
+   xra a           ; $8ce9 af
    sta $7604       ; $8cea 32 04 76
-   ret             ; $8ced c9      
+   ret             ; $8ced c9
 
-   mov a,c         ; $8cee 79      
-   ani $7f         ; $8cef e6 7f   
-   mov c,a         ; $8cf1 4f      
-   cpi $1f         ; $8cf2 fe 1f   
+   mov a,c         ; $8cee 79
+   ani $7f         ; $8cef e6 7f
+   mov c,a         ; $8cf1 4f
+   cpi $1f         ; $8cf2 fe 1f
    jz $fda3        ; $8cf4 ca a3 fd
-   cpi $0c         ; $8cf7 fe 0c   
+   cpi $0c         ; $8cf7 fe 0c
    jz $fdb2        ; $8cf9 ca b2 fd
-   cpi $0d         ; $8cfc fe 0d   
+   cpi $0d         ; $8cfc fe 0d
    jz $fdf3        ; $8cfe ca f3 fd
-   cpi $0a         ; $8d01 fe 0a   
+   cpi $0a         ; $8d01 fe 0a
    jz $fd47        ; $8d03 ca 47 fd
-   cpi $08         ; $8d06 fe 08   
+   cpi $08         ; $8d06 fe 08
    jz $fdd6        ; $8d08 ca d6 fd
-   cpi $18         ; $8d0b fe 18   
+   cpi $18         ; $8d0b fe 18
    jz $fdb9        ; $8d0d ca b9 fd
-   cpi $19         ; $8d10 fe 19   
+   cpi $19         ; $8d10 fe 19
    jz $fde2        ; $8d12 ca e2 fd
-   cpi $1a         ; $8d15 fe 1a   
+   cpi $1a         ; $8d15 fe 1a
    jz $fdc5        ; $8d17 ca c5 fd
-   cpi $1b         ; $8d1a fe 1b   
+   cpi $1b         ; $8d1a fe 1b
    jz $fd9e        ; $8d1c ca 9e fd
-   cpi $07         ; $8d1f fe 07   
+   cpi $07         ; $8d1f fe 07
    jnz $fd38       ; $8d21 c2 38 fd
    lxi b,$05f0     ; $8d24 01 f0 05
-   mov a,b         ; $8d27 78      
-   ei              ; $8d28 fb      
-   dcr a           ; $8d29 3d      
+   mov a,b         ; $8d27 78
+   ei              ; $8d28 fb
+   dcr a           ; $8d29 3d
    jnz $fd28       ; $8d2a c2 28 fd
-   mov a,b         ; $8d2d 78      
-   di              ; $8d2e f3      
-   dcr a           ; $8d2f 3d      
+   mov a,b         ; $8d2d 78
+   di              ; $8d2e f3
+   dcr a           ; $8d2f 3d
    jnz $fd2e       ; $8d30 c2 2e fd
-   dcr c           ; $8d33 0d      
+   dcr c           ; $8d33 0d
    jnz $fd27       ; $8d34 c2 27 fd
-   ret             ; $8d37 c9      
+   ret             ; $8d37 c9
 
-   mov m,c         ; $8d38 71      
+   mov m,c         ; $8d38 71
    call $fdb9      ; $8d39 cd b9 fd
-   mov a,d         ; $8d3c 7a      
-   cpi $03         ; $8d3d fe 03   
-   rnz             ; $8d3f c0      
-   mov a,e         ; $8d40 7b      
-   cpi $08         ; $8d41 fe 08   
-   rnz             ; $8d43 c0      
+   mov a,d         ; $8d3c 7a
+   cpi $03         ; $8d3d fe 03
+   rnz             ; $8d3f c0
+   mov a,e         ; $8d40 7b
+   cpi $08         ; $8d41 fe 08
+   rnz             ; $8d43 c0
    call $fde2      ; $8d44 cd e2 fd
-   mov a,d         ; $8d47 7a      
-   cpi $1b         ; $8d48 fe 1b   
+   mov a,d         ; $8d47 7a
+   cpi $1b         ; $8d48 fe 1b
    jnz $fdc5       ; $8d4a c2 c5 fd
-   push h          ; $8d4d e5      
-   push d          ; $8d4e d5      
+   push h          ; $8d4d e5
+   push d          ; $8d4e d5
    lxi h,$77c2     ; $8d4f 21 c2 77
    lxi d,$7810     ; $8d52 11 10 78
    lxi b,$079e     ; $8d55 01 9e 07
-   ldax d          ; $8d58 1a      
-   mov m,a         ; $8d59 77      
-   inx h           ; $8d5a 23      
-   inx d           ; $8d5b 13      
-   dcx b           ; $8d5c 0b      
-   mov a,c         ; $8d5d 79      
-   ora b           ; $8d5e b0      
+   ldax d          ; $8d58 1a
+   mov m,a         ; $8d59 77
+   inx h           ; $8d5a 23
+   inx d           ; $8d5b 13
+   dcx b           ; $8d5c 0b
+   mov a,c         ; $8d5d 79
+   ora b           ; $8d5e b0
    jnz $fd58       ; $8d5f c2 58 fd
-   pop d           ; $8d62 d1      
-   pop h           ; $8d63 e1      
-   ret             ; $8d64 c9      
+   pop d           ; $8d62 d1
+   pop h           ; $8d63 e1
+   ret             ; $8d64 c9
 
-   mov a,c         ; $8d65 79      
-   cpi $59         ; $8d66 fe 59   
+   mov a,c         ; $8d65 79
+   cpi $59         ; $8d66 fe 59
    jnz $fce9       ; $8d68 c2 e9 fc
    call $fdb2      ; $8d6b cd b2 fd
-   mvi a,$02       ; $8d6e 3e 02   
+   mvi a,$02       ; $8d6e 3e 02
    jmp $fcea       ; $8d70 c3 ea fc
 
-   mov a,c         ; $8d73 79      
-   sui $20         ; $8d74 d6 20   
-   mov c,a         ; $8d76 4f      
-   dcr c           ; $8d77 0d      
-   mvi a,$04       ; $8d78 3e 04   
+   mov a,c         ; $8d73 79
+   sui $20         ; $8d74 d6 20
+   mov c,a         ; $8d76 4f
+   dcr c           ; $8d77 0d
+   mvi a,$04       ; $8d78 3e 04
    jm $fcea        ; $8d7a fa ea fc
-   push b          ; $8d7d c5      
+   push b          ; $8d7d c5
    call $fdc5      ; $8d7e cd c5 fd
    pop b           ; $8d81 c1      
    jmp $fd77       ; $8d82 c3 77 fd
