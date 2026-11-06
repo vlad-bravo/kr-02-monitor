@@ -41,6 +41,8 @@ lf836:
    shld $762f      ; $8864 22 2f 76
    mvi a,$c3       ; $8867 3e c3
    sta $7626       ; $8869 32 26 76
+PRINT_PROMPT:
+@f86c:
    lxi sp,$76cf    ; $886c 31 cf 76
    lxi h,$ff66     ; $886f 21 66 ff
    call $f922      ; $8872 cd 22 f9
